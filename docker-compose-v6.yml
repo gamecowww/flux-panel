@@ -54,7 +54,7 @@ services:
       start_period: 90s
 
   frontend:
-    image: brunuhgamecowwwville/vite-frontend:latest
+    image: gamecowww/vite-frontend:latest
     container_name: vite-frontend
     restart: unless-stopped
     ports:

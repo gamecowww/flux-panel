@@ -54,7 +54,7 @@ services:
       start_period: 90s
 
   frontend:
-    image: gamecowww/vite-frontend:latest
+    image: brunuhgamecowwwville/vite-frontend:latest
     container_name: vite-frontend
     restart: unless-stopped
     ports:
@@ -82,5 +82,5 @@ networks:
     enable_ipv6: true
     ipam:
       config:
-        - subnet: 172.20.0.0/16 
-        - subnet: fd00:dead:beef::/48
+        - subnet: 172.66.0.0/16 
+        - subnet: fd72:6666:beef::/48

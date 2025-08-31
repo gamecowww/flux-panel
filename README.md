@@ -127,3 +127,4 @@ curl -L https://raw.githubusercontent.com/gamecowww/flux-panel/refs/heads/main/i
 作者对因使用本项目所造成的任何直接或间接损失概不负责，也不提供任何形式的担保或技术支持。
 
 请确保在合法、合规、安全的前提下使用本项目。
+

@@ -201,14 +201,12 @@ install_panel() {
   echo "📡 选择配置文件：$(basename "$DOCKER_COMPOSE_URL")"
   curl -L -o docker-compose.yml "$DOCKER_COMPOSE_URL"
 
-  # 检查 /root/gost.sql 是否已存在
-  if [[ -f "/root/gost.sql" ]]; then
-    echo "⏭️ 跳过下载: 使用 /root/gost.sql 文件"
-    cp /root/gost.sql ./gost.sql
+  # 检查 gost.sql 是否已存在
+  if [[ -f "gost.sql" ]]; then
+    echo "⏭️ 跳过下载: gost.sql (使用当前位置的文件)"
   else
     echo "📡 下载数据库初始化文件..."
-    curl -L -o /root/gost.sql "$GOST_SQL_URL"
-    cp /root/gost.sql ./gost.sql
+    curl -L -o gost.sql "$GOST_SQL_URL"
   fi
   echo "✅ 文件准备完成"
 
@@ -232,8 +230,8 @@ EOF
 
   echo "🎉 部署完成"
   echo "🌐 访问地址: http://服务器IP:$FRONTEND_PORT"
-  echo "📖 部署完成后请阅读下使用文档，求求了啊，不要上去就是一顿操作"
-  echo "📚 文档地址: https://tes.cc/guide.html"
+  echo "📖 部署完成后请阅读下使用文档。不要上去就是一顿操作"
+  echo "📚 文档地址: https://gamecowww.github.io/flux-panel/guide.html"
   echo "💡 默认管理员账号: admin_user / admin_user"
   echo "⚠️  登录后请立即修改默认密码！"
 

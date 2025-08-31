@@ -201,12 +201,14 @@ install_panel() {
   echo "📡 选择配置文件：$(basename "$DOCKER_COMPOSE_URL")"
   curl -L -o docker-compose.yml "$DOCKER_COMPOSE_URL"
 
-  # 检查 gost.sql 是否已存在
-  if [[ -f "gost.sql" ]]; then
-    echo "⏭️ 跳过下载: gost.sql (使用当前位置的文件)"
+  # 检查 /root/gost.sql 是否已存在
+  if [[ -f "/root/gost.sql" ]]; then
+    echo "⏭️ 跳过下载: 使用 /root/gost.sql 文件"
+    cp /root/gost.sql ./gost.sql
   else
     echo "📡 下载数据库初始化文件..."
-    curl -L -o gost.sql "$GOST_SQL_URL"
+    curl -L -o /root/gost.sql "$GOST_SQL_URL"
+    cp /root/gost.sql ./gost.sql
   fi
   echo "✅ 文件准备完成"
 
